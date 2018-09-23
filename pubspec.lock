@@ -69,8 +69,8 @@ packages:
     description:
       path: "packages/flutter"
       ref: HEAD
-      resolved-ref: f9bc6ece5ac3e91f701251dcd575640890c7aa3b
-      url: "https://github.com/flutter2js/flutter2js_packages"
+      resolved-ref: "9c3a76f199c1ef810fdecb5f214e249bfd6185d7"
+      url: "https://github.com/ethanblake4/flutter2js_packages"
     source: git
     version: "0.0.4"
   front_end:
