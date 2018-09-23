@@ -11,6 +11,9 @@ class _Window extends ui.Window {
   _Window();
 
   @override
+  double get devicePixelRatio => PlatformPlugin.current.devicePixelRatio;
+
+  @override
   String get defaultRouteName => PlatformPlugin.current.routingPlugin.current;
 
   @override

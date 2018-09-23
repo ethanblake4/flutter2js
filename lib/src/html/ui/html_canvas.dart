@@ -45,6 +45,7 @@ class HtmlCanvas extends Object with HasDebugName implements Canvas {
 
   @override
   void clipRRect(RRect rrect) {
+    print("@HtmlCanvas ClipRREct $rrect");
     context.beginPath();
     _rrect(rrect);
     context.clip();
@@ -84,6 +85,7 @@ class HtmlCanvas extends Object with HasDebugName implements Canvas {
 
   @override
   void drawColor(Color color, BlendMode blendMode) {
+    print("@HtmlCanvas DrawColor $color");
     context.setStrokeColorRgb(color.red, color.green, color.blue);
     context.setFillColorRgb(color.red, color.green, color.blue);
     context.globalCompositeOperation = globalCompositeOperationFrom(blendMode);
@@ -92,6 +94,7 @@ class HtmlCanvas extends Object with HasDebugName implements Canvas {
 
   @override
   void drawDRRect(RRect outer, RRect inner, Paint paint) {
+    print("@HtmlCanvas DrawDRRect");
     beginStrokeOrFill(paint);
     _rrect(outer);
     endStrokeOrFill(paint);
@@ -191,6 +194,7 @@ class HtmlCanvas extends Object with HasDebugName implements Canvas {
 
   @override
   void drawRect(Rect rect, Paint paint) {
+    print("@HtmlCanvas drawRect");
     beginStrokeOrFill(paint);
     context.rect(rect.left, rect.top, rect.width, rect.height);
     endStrokeOrFill(paint);

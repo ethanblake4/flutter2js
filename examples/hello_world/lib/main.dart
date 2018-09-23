@@ -9,7 +9,6 @@ void main() {
 class HelloApp extends StatelessWidget {
 
   @override
-  Widget build(BuildContext context) => const Center(
-      child: const Text('Hello flutter2js!', textDirection: TextDirection.ltr)
-  );
+  Widget build(BuildContext context) => Container(color: Colors.red.shade500,
+  child: Center(child: Text("Yo yo yo its ya boy", textDirection: TextDirection.ltr,)));
 }

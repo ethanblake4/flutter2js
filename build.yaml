@@ -1,0 +1,12 @@
+targets:
+  $default:
+    builders:
+      build_web_compilers|entrypoint:
+        # These are globs for the entrypoints you want to compile.
+        options:
+          dart2js_args:
+          - --minify
+          - --omit-implicit-checks
+          - --trust-primitives
+        generate_for:
+        - web/**.dart

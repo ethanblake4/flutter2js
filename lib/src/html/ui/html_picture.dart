@@ -28,10 +28,13 @@ class HtmlPicture extends Object with HasDebugName implements Picture {
     }
   }
 
-  html.CanvasElement toHtmlElement(int width, int height) {
+  html.CanvasElement toHtmlElement(int width, int height, int widthPx, int heightPx) {
     logMethod(this, "toHtmlElement", arg0:width, arg1:height);
-    final element = new html.CanvasElement(width:width, height:height);
+    final element = new html.CanvasElement(width:widthPx, height:heightPx);
     element.setAttribute("data-kind", "Picture");
+    element.style.imageRendering = "pixelated";
+    element.style.width = "${width}px";
+    element.style.height = "${height}px";
     final canvas = new HtmlCanvas(element);
     draw(canvas);
     return element;
@@ -39,8 +42,9 @@ class HtmlPicture extends Object with HasDebugName implements Picture {
 
   @override
   Image toImage(int width, int height) {
-    final element = toHtmlElement(width, height);
-    return new HtmlEngineImage(element.toDataUrl(), width: width, height: height);
+    final dpr = window.devicePixelRatio;
+    final element = toHtmlElement(width, height, (width*dpr).toInt(), (width*dpr).toInt());
+    return new HtmlEngineImage(element.toDataUrl(), width: (width*dpr).toInt(), height: (height*dpr).toInt());
   }
 }
 

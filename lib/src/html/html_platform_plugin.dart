@@ -37,10 +37,17 @@ class BrowserPlatformPlugin implements HasDebugName, PlatformPlugin {
 
   @override
   Size get physicalSize {
+    final dpr = window.devicePixelRatio;
     final width = html.window.innerWidth;
     final height = html.window.innerHeight;
-    final size = new Size(width.toDouble(), height.toDouble());
+    final size = new Size(width.toDouble() * dpr, height.toDouble() * dpr);
+    print(size.toString());
     return size;
+  }
+
+  @override
+  double get devicePixelRatio {
+    return html.window.devicePixelRatio;
   }
 
   @override

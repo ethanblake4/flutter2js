@@ -85,16 +85,21 @@ class HtmlSceneBuilder extends Object
   void addPicture(Offset offset, Picture picture,
       {bool isComplexHint: false, bool willChangeHint: false}) {
     logMethod(this, "addPicture", arg0: offset, arg1: picture);
+    print("DPR ${window.devicePixelRatio}");
     final size = window.physicalSize;
+    final dpr = window.devicePixelRatio;
     final element = (picture as HtmlPicture).toHtmlElement(
         (size.width - offset.dx).clamp(0, size.width).toInt(),
-        (size.height - offset.dy).clamp(0, size.height).toInt());
+        (size.height - offset.dy).clamp(0, size.height).toInt(),
+        (size.width*dpr - offset.dx).clamp(0, size.width*dpr).toInt(),
+        (size.height*dpr - offset.dy).clamp(0, size.height*dpr).toInt());
     addHtmlElement(offset, element);
   }
 
   @override
   void addTexture(int textureId,
       {Offset offset: Offset.zero, double width: 0.0, double height: 0.0}) {
+    print("addTexture HERE");
     final element = html.querySelector("#flutter-texture-${textureId}");
     addHtmlElement(offset, element, width: width, height: height);
   }

@@ -27,6 +27,8 @@ abstract class PlatformPlugin {
 
   Size get physicalSize;
 
+  double get devicePixelRatio;
+
   RoutingPlugin get routingPlugin;
 
   /// Invoked by implementation of Flutter's [Clipboard].
