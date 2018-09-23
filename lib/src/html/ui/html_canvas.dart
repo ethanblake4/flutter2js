@@ -78,7 +78,7 @@ class HtmlCanvas extends Object with HasDebugName implements Canvas {
   void drawCircle(Offset c, double radius, Paint paint) {
     assert(radius > 0, "Invalid radius ${radius}");
     beginStrokeOrFill(paint);
-    context.arc(c.dx, c.dy, radius, 0.0, 2 * math.PI);
+    context.arc(c.dx, c.dy, radius, 0.0, 2 * math.pi);
     endStrokeOrFill(paint);
   }
 
@@ -127,7 +127,7 @@ class HtmlCanvas extends Object with HasDebugName implements Canvas {
     final center = rect.center;
     final rx = rect.width / 2;
     final ry = rect.height / 2;
-    context.ellipse(center.dx, center.dy, rx, ry, 0, 0, 2 * math.PI, false);
+    context.ellipse(center.dx, center.dy, rx, ry, 0, 0, 2 * math.pi, false);
     endStrokeOrFill(paint);
   }
 
@@ -462,7 +462,7 @@ class HtmlCanvas extends Object with HasDebugName implements Canvas {
       final left = rrect.left;
       final top = rrect.top;
       context.ellipse(
-          left + dx, top + dy, dx, dy, 0.0, 0.5 * math.PI, math.PI, true);
+          left + dx, top + dy, dx, dy, 0.0, 0.5 * math.pi, math.pi, true);
     }
     // Top-right
     {
@@ -472,7 +472,7 @@ class HtmlCanvas extends Object with HasDebugName implements Canvas {
       final right = rrect.right;
       final top = rrect.top;
       context.ellipse(
-          right - dx, top + dy, dx, dy, 0.0, 0.0, 0.5 * math.PI, true);
+          right - dx, top + dy, dx, dy, 0.0, 0.0, 0.5 * math.pi, true);
     }
 
     // Bottom-left
@@ -483,7 +483,7 @@ class HtmlCanvas extends Object with HasDebugName implements Canvas {
       final left = rrect.left;
       final bottom = rrect.bottom;
       context.ellipse(
-          left + dx, bottom - dy, dx, dy, 0.0, math.PI, 1.5 * math.PI, true);
+          left + dx, bottom - dy, dx, dy, 0.0, math.pi, 1.5 * math.pi, true);
     }
 
     // Bottom-right
@@ -493,8 +493,8 @@ class HtmlCanvas extends Object with HasDebugName implements Canvas {
       final dy = r.y;
       final right = rrect.right;
       final bottom = rrect.bottom;
-      context.ellipse(right - dx, bottom - dy, dx, dy, 1.5 * math.PI,
-          2 * math.PI, math.PI, true);
+      context.ellipse(right - dx, bottom - dy, dx, dy, 1.5 * math.pi,
+          2 * math.pi, math.pi, true);
     }
     context.closePath();
   }

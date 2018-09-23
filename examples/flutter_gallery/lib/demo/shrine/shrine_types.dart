@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flutter/ui.dart' show hashValues;
+import 'dart:ui' show hashValues;
 
 import 'package:flutter/foundation.dart';
 
@@ -70,14 +70,17 @@ class Product {
 }
 
 class Order {
-  Order({ @required this.product, this.quantity: 1, this.inCart: false });
+  Order({ @required this.product, this.quantity = 1, this.inCart = false })
+    : assert(product != null),
+      assert(quantity != null && quantity >= 0),
+      assert(inCart != null);
 
   final Product product;
   final int quantity;
   final bool inCart;
 
   Order copyWith({ Product product, int quantity, bool inCart }) {
-    return new Order(
+    return Order(
       product: product ?? this.product,
       quantity: quantity ?? this.quantity,
       inCart: inCart ?? this.inCart

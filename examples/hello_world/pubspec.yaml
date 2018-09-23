@@ -1,12 +1,28 @@
 name: hello_world
 
+environment:
+  sdk: '>2.0.0 <=3.0.0'
+
 dependencies:
   flutter:
     sdk: flutter
+  flutter2js: any
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+dependency_overrides:
+  flutter2js:
+    path: ../../
+  flutter:
+    git:
+      url: https://github.com/ethanblake4/flutter2js_packages
+      path: packages/flutter
+  flutter_test:
+    git:
+      url: https://github.com/ethanblake4/flutter2js_packages
+      path: packages/flutter_test
 
 flutter:
   uses-material-design: true

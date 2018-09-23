@@ -91,7 +91,7 @@ class InternalHtmlPath extends Object with HasDebugName implements HtmlPath {
           oval.height / 2,
           0,
           0,
-          2 * math.PI,
+          2 * math.pi,
           false);
     });
   }
@@ -316,7 +316,7 @@ class NativeHtmlPath extends Object with HasDebugName implements HtmlPath {
   @override
   void addOval(Rect oval) {
     htmlPath.ellipse(oval.left, oval.top, oval.width / 2, oval.height / 2, 0,
-        0, 2 * math.PI, false);
+        0, 2 * math.pi, false);
   }
 
   @override

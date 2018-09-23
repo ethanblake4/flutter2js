@@ -304,7 +304,7 @@ void debugDomElement(BuildContext context, html.Element node, Widget widget) {
     assert(() {
       node.setAttribute("data-flutter-name", widget.runtimeType.toString());
       return true;
-    });
+    }());
   }
 }
 

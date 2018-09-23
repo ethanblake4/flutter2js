@@ -1,7 +1,7 @@
 name: hello_world_browser
 
 environment:
-  sdk: '>=2.0.0-dev.19.0'
+  sdk: '>2.0.0 <=3.0.0'
 
 dependencies:
   hello_world:
@@ -9,8 +9,9 @@ dependencies:
   flutter2js: any
 
 dev_dependencies:
-  browser: ^0.10.0
-  dart_to_js_script_rewriter: ^1.0.3
+  build_runner: ^0.10.0
+  build_test: ^0.10.2
+  build_web_compilers: ^0.4.0
   test: any
   flutter_test: any
 
@@ -19,14 +20,9 @@ dependency_overrides:
     path: ../../
   flutter:
     git:
-      url: https://github.com/flutter2js/flutter2js_packages
+      url: https://github.com/ethanblake4/flutter2js_packages
       path: packages/flutter
   flutter_test:
     git:
-      url: https://github.com/flutter2js/flutter2js_packages
+      url: https://github.com/ethanblake4/flutter2js_packages
       path: packages/flutter_test
-
-transformers:
-- dart_to_js_script_rewriter
-- $dart2js:
-    checked: true
