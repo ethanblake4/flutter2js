@@ -36,4 +36,7 @@ class HtmlSemanticsUpdateBuilder extends Object with HasDebugName implements Sem
       TextDirection textDirection,
       Float64List transform,
       Int32List children}) {}
+
+  @override
+  void _updateCustomAction(int id, String label, String hint, int overrideId) {}
 }
