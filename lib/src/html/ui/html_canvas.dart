@@ -28,7 +28,7 @@ class HtmlCanvas extends Object with HasDebugName implements Canvas {
   html.CanvasRenderingContext2D get context => _context;
 
   @override
-  void clipPath(Path path) {
+  void clipPath(Path path, {bool doAntiAlias: false}) {
     if (path is HtmlPath) {
       path.clip(context);
     } else {
@@ -37,15 +37,15 @@ class HtmlCanvas extends Object with HasDebugName implements Canvas {
   }
 
   @override
-  void clipRect(Rect rect, {ClipOp clipOp}) {
+  void clipRect(Rect rect, {ClipOp clipOp, bool doAntiAlias: false}) {
     context.beginPath();
     context.rect(rect.left, rect.top, rect.width, rect.height);
     context.clip();
   }
 
   @override
-  void clipRRect(RRect rrect) {
-    print("@HtmlCanvas ClipRREct $rrect");
+  void clipRRect(RRect rrect, {bool doAntiAlias: false}) {
+    print("@HtmlCanvas ClipRREct $rrect $doAntiAlias");
     context.beginPath();
     _rrect(rrect);
     context.clip();

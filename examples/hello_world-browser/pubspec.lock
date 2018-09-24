@@ -181,7 +181,7 @@ packages:
     description:
       path: "packages/flutter"
       ref: HEAD
-      resolved-ref: e6e728d12dbf440fc5d84cde3379c5fea795112c
+      resolved-ref: "9c3a76f199c1ef810fdecb5f214e249bfd6185d7"
       url: "https://github.com/ethanblake4/flutter2js_packages"
     source: git
     version: "0.0.4"
@@ -197,7 +197,7 @@ packages:
     description:
       path: "packages/flutter_test"
       ref: HEAD
-      resolved-ref: e6e728d12dbf440fc5d84cde3379c5fea795112c
+      resolved-ref: "9c3a76f199c1ef810fdecb5f214e249bfd6185d7"
       url: "https://github.com/ethanblake4/flutter2js_packages"
     source: git
     version: "0.0.0"
