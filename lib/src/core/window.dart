@@ -6,9 +6,31 @@ import 'package:flutter2js/src/core/platform_plugin.dart';
 
 final ui.Window window = new _Window();
 
+class _AccessibilityFeats implements ui.AccessibilityFeatures {
+  @override
+  bool get accessibleNavigation => false;
+
+  @override
+  bool get boldText => false;
+
+  @override
+  bool get disableAnimations => false;
+
+  @override
+  bool get invertColors => false;
+
+  @override
+  bool get reduceMotion => false;
+
+}
+
 /// Singleton class that delegates implementation to [PlatformPlugin].
 class _Window extends ui.Window {
+
   _Window();
+
+  @override
+  ui.AccessibilityFeatures get accessibilityFeatures => new _AccessibilityFeats();
 
   @override
   double get devicePixelRatio => PlatformPlugin.current.devicePixelRatio;

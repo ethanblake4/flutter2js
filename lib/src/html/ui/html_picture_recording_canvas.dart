@@ -20,21 +20,21 @@ class HtmlPictureRecordingCanvas extends Object
   }
 
   @override
-  void clipPath(Path path) {
+  void clipPath(Path path, {bool doAntiAlias: false}) {
     _add((Canvas canvas) {
       canvas.clipPath(path);
     });
   }
 
   @override
-  void clipRect(Rect rect, {ClipOp clipOp}) {
+  void clipRect(Rect rect, {ClipOp clipOp, bool doAntiAlias: false}) {
     _add((Canvas canvas) {
       canvas.clipRect(rect);
     });
   }
 
   @override
-  void clipRRect(RRect rrect) {
+  void clipRRect(RRect rrect, {bool doAntiAlias: false}) {
     _add((Canvas canvas) {
       canvas.clipRRect(rrect);
     });
